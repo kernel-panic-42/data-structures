@@ -1,5 +1,6 @@
 # executables
 linkl
+seg
 
 # Prerequisites
 *.d

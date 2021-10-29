@@ -34,10 +34,10 @@ void addNode(node* head, int value) {
     n->next = tmp;
 }
 
-int main() {
+int main(void) {
     node head = NULL;
 
-    for (int i = 2; i < 16; i += 2) {
+    for (size_t i = 2; i < 16; i += 2) {
         addNode(&head, i);
     }
 
@@ -48,5 +48,5 @@ int main() {
         n = n->next;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
