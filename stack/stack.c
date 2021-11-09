@@ -7,7 +7,7 @@ struct Element {
 };
 
 typedef struct Element* element;
-element top;
+element head;
 
 element createElement(int value) {
     element e;
@@ -19,28 +19,28 @@ element createElement(int value) {
     return e;
 }
 
-void push(int value) {
+void enqueue(int value) {
     element e = createElement(value);
-    if (top != NULL)
-        e->next = top;
-    top = e;
+    if (head != NULL)
+        e->next = head;
+    head = e;
 }
 
-element pop(void) {
-    element e = top;
+element dequeue(void) {
+    element e = head;
     if (e != NULL) {
-        top = top->next;
+        head = head->next;
         e->next = NULL;
     }
     return e;
 }
 
 element peek(void) {
-    return top;
+    return head;
 }
 
-void stackInit(void) {
-    top = NULL;
+void queueInit(void) {
+    head = NULL;
 }
 
 /**
@@ -49,10 +49,10 @@ void stackInit(void) {
  *
  * */
 int main(void) {
-    stackInit();
+    queueInit();
 
     for (int i = 10; i <= 15; i++) {
-        push(i);
+        enqueue(i);
         printf("push '%d'\n", i);
     }
 
@@ -68,7 +68,7 @@ int main(void) {
 
         printf("peek '%d'\n", e->data);
 
-        e = pop();
+        e = dequeue();
         printf("pop  '%d'\n", e->data);
     }
     return EXIT_SUCCESS;
