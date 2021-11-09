@@ -27,11 +27,10 @@ void addNode(node* head, int value) {
         return;
     }
 
-    n = *head;
-    while (n->next) {
-        n = n->next;
-    }
-    n->next = tmp;
+    tmp->next = *head;
+    *head = tmp;
+    return;
+    
 }
 
 int main(void) {
