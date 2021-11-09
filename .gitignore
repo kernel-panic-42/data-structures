@@ -1,6 +1,8 @@
 # executables
+bst
+queue
+stack
 linkl
-seg
 
 # Prerequisites
 *.d
