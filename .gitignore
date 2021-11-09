@@ -1,8 +1,8 @@
 # executables
-bst
-queue
-stack
-linkl
+bst/bst
+queue/queue
+stack/stack
+llist/linkl
 
 # Prerequisites
 *.d
